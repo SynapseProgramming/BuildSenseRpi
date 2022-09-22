@@ -13,10 +13,11 @@ intX = 1
 intY = 2
 intZ = 3
 dbTime = 43.345656545
+sent = False;
 
 #dump data into table
-curs.execute("INSERT INTO sensordata (Nodeid, Battery, X, Y, Z, Time) VALUES(?, ?, ?, ?, ?, ?)",(intID, intBattery, intX,
-intY, intZ, dbTime))
+curs.execute("INSERT INTO sensordata (Nodeid, Battery, X, Y, Z, Time, Sent) VALUES(?, ?, ?, ?, ?, ?, ?)", (intID, intBattery, intX,
+intY, intZ, dbTime, sent))
 
 # save changes and exit
 connection.commit()
