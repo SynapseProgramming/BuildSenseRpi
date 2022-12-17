@@ -13,7 +13,7 @@ curs.execute("SELECT * FROM sensordata WHERE sent=0")
 rows = curs.fetchall()
 
 for i in rows:
-    print(i)
+    print(i[0])
 
 
 
