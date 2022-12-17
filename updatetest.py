@@ -6,8 +6,13 @@ connection = sqlite3.connect('sensordata.db')
 # create a cursor
 curs = connection.cursor() 
 
-#update the data
-curs.execute("Update sensordata set Sent = 0 where Time=1663858583.7005565")
+# query
+query = """UPDATE sensordata SET Sent = ? WHERE Time = ?"""
+data = (True,1671266688.4679153)
+curs.execute(query,data)
+
+
+ 
 connection.commit()
 curs.close()
 connection.close()
